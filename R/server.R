@@ -1,32 +1,44 @@
 library(shiny)
 
 server <- function(input, output, session) {
-  current_num <- reactiveVal(NULL)
+  curnumDBI <- reactiveVal(NULL)
+  curnumDVI <- reactiveVal(NULL)
   
-  observeEvent(input$botRND, {
+  observeEvent(input$botRNDdbi, {
     new_num <- sample(1:14, 1)
-    current_num(new_num)
-    
-    temaRND <- temasDBI[new_num]
+    curnumDBI(new_num)
   })
   
-  observeEvent(input$botRES, {
-    current_num(NULL)
+  observeEvent(input$botRNDdvi, {
+    new_num <- sample(1:14, 1)
+    curnumDVI(new_num)
+  })
+  
+  observeEvent(input$botRESdbi, {
+    curnumDBI(NULL)
+  })
+  
+  observeEvent(input$botRESdvi, {
+    curnumDVI(NULL)
   })
 
-  output$randomNum <- renderText({
-    req(current_num())
-    paste("Tema Nº:", temasDBI[current_num()])
+  output$rndDBI <- renderText({
+    req(curnumDBI())
+    paste("Tema Nº:", temasDBI[curnumDBI()])
     })
   
+  output$rndDVI <- renderText({
+    req(curnumDVI())
+    paste("Tema Nº:", temasDVI[curnumDVI()])
+  })
   
   output$DBI_html <- renderUI({
     HTML("<div style='font-family:sans-serif'>",
-         "<h3>Diversidad Biológica I</h1>",
+         "<h3><b>Diversidad Biológica I (Cs. Biológicas)</b></h3>",
          "<ol  style='font-size:18px'>",
          "<li>a. Teoría endosimbiótica serial – b. Fungi – c. Alveolata</li>",
          "<li>a. Diversidad y distribución global de los organismos – b. Amoebozoa – c. Basidiomycota</li>",
-         "<li>a. Fundamentos de los sistemas de clasificación -b. Ascomycota – c. Excavata (Discoba + Metamonada)</li>",
+         "<li>a. Fundamentos de los sistemas de clasificación – b. Ascomycota – c. Excavata (Discoba + Metamonada)</li>",
          "<li>a. Organismos de interés sanitario – b. Archaeplastida – c. Stramenopila</li>",
          "<li>a. Historia evolutiva de la diversidad biológica – b. Cyanobacteria – c. Rhizaria</li>",
          "<li>a. Teoría endosimbiótica serial – b. Ascomycota – c. Excavata (Discoba + Metamonada)</li>",
@@ -45,11 +57,11 @@ server <- function(input, output, session) {
   
   output$DVI_html <- renderUI({
     HTML("<div style='font-family:sans-serif'>",
-         "<h3>Diversidad Vegetal I (Profesorado Cs. Biológicas)</h1>",
+         "<h3><b>Diversidad Vegetal I (Profesorado Cs. Biológicas)</b></h3>",
          "<ol  style='font-size:18px'>",
          "<li>a. Teoría endosimbiótica serial – b. Chytridiomycota, Mucoromycotina y Glomeromycota – c. Bacillariophyceae</li>",
          "<li>a. Diversidad y distribución global de algas – b. Amoebozoa – c. Basidiomycota</li>",
-         "<li>a. Fundamentos de los sistemas de clasificación -b. Ascomycota – c. Rhodophyceae</li>",
+         "<li>a. Fundamentos de los sistemas de clasificación – b. Ascomycota – c. Rhodophyceae</li>",
          "<li>a. Micorrizas – b. Chlorophyta – c. Stramenopila</li>",
          "<li>a. Líquenes – b. Cianobacteria – c. Marchantiomorpha, Anthocerotophyta y Bryophyta</li>",
          "<li>a. Teoría endosimbiótica serial – b. Ascomycota – c. Dinophyceae</li>",
@@ -82,6 +94,21 @@ server <- function(input, output, session) {
     "14) a. Historia evolutiva de la diversidad biológica – b. Basidiomycota – c. Rhizaria"
     )
   
-  
+  temasDVI <- c(
+    "1) a. Teoría endosimbiótica serial – b. Chytridiomycota, Mucoromycotina y Glomeromycota – c. Bacillariophyceae",
+    "2) a. Diversidad y distribución global de algas – b. Amoebozoa – c. Basidiomycota",
+    "3) a. Fundamentos de los sistemas de clasificación -b. Ascomycota – c. Rhodophyceae",
+    "4) a. Micorrizas – b. Chlorophyta – c. Stramenopila",
+    "5) a. Líquenes – b. Cianobacteria – c. Marchantiomorpha, Anthocerotophyta y Bryophyta",
+    "6) a. Teoría endosimbiótica serial – b. Ascomycota – c. Dinophyceae",
+    "7) a. Historia evolutiva de la diversidad biológica – b. Phaeophyceae – c. Ustilaginomycotina y Pucciniomycotina",
+    "8) a. Fundamentos de los sistemas de clasificación – b. Cyanobacteria – c. Oomycetes, Hyphochytridiomycetes y Labyrinthulomycetes",
+    "9) a. Líquenes – b. SAR (Stramenopila, Alveolata y Rhizaria) – c. Amoebozoa",
+    "10) a. Teoría endosimbiótica serial – b. Excavata (Discoba + Metamonada) – c. Agaricomycotina",
+    "11) a. Distribución global de algas – b. Marchantiomorpha, Anthocerotophyta y Bryophyta – c. Pezizomycotina",
+    "12) a. Fungi – b. Cianobacterias – c. Bacillariophyceae",
+    "13) a. Taphrinomycotina y Saccharomycotina – b. Archaeplastida – c. Micorrizas",
+    "14) a. Teoría endosimbiótica serial – b. Basidiomycota – c. Phaeophyceae"
+    )
   
   }
