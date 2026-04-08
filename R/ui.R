@@ -2,52 +2,52 @@ ui <- fluidPage(
   tags$head(
     tags$style(HTML("
   button#botRNDdbi {
-    height: 5vw;
-    width: 22vw;
-    margin-top: 2vw;
+    height: 3vw;
+    width: 18vw;
+    margin-top: 1vw;
     background-color: darkcyan;
     border-radius: 20px;
     color: white;
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: bold;
     font-family: sans-serif;
     vertical-align: middle;
   }
   
   button#botRNDdvi {
-    height: 5vw;
-    width: 22vw;
-    margin-top: 2vw;
+    height: 3vw;
+    width: 18vw;
+    margin-top: 1vw;
     background-color: darkcyan;
     border-radius: 20px;
     color: white;
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: bold;
     font-family: sans-serif;
     vertical-align: middle;
     }
                     
   button#botRESdbi {
-    height: 5vw;
-    width: 22vw;
-    margin-top: 2vw;
+    height: 3vw;
+    width: 18vw;
+    margin-top: 1vw;
     background-color: firebrick;
     border-radius: 20px;
     color: white;
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: bold;
     font-family: sans-serif;
     vertical-align: middle;
     }
      
   button#botRESdvi {
-    height: 5vw;
-    width: 22vw;
-    margin-top: 2vw;
+    height: 3vw;
+    width: 18vw;
+    margin-top: 1vw;
     background-color: firebrick;
     border-radius: 20px;
     color: white;
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: bold;
     font-family: sans-serif;
     vertical-align: middle;
