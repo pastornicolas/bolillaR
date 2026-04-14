@@ -46,7 +46,7 @@ server <- function(input, output, session) {
          "<li>a. Fundamentos de los sistemas de clasificación – b. Cyanobacteria – c. Amoebozoa</li>",
          "<li>a. Organismos de interés sanitario – b. Alveolata – c. Fungi</li>",
          "<li>a. Teoría endosimbiótica serial – b. Excavata (Discoba + Metamonada) – c. Archaeplastida</li>",
-         "<li>a. Fundamentos de los sistemas de clasificación – b. Rhizaria – c. Amoebozoa</li>",
+         "<li>a. Fundamentos de los sistemas de clasificación – b. Rhizaria – c. Archaeplastida</li>",
          "<li>a. Organismos de interés sanitario – b. Cianobacterias – c. Stramenopila</li>",
          "<li>a. Diversidad y distribución global de los organismos – b. Archaeplastida – c. Fungi</li>",
          "<li>a. Historia evolutiva de la diversidad biológica – b. Basidiomycota – c. Rhizaria</li>",
@@ -88,7 +88,7 @@ server <- function(input, output, session) {
     "8) a. Fundamentos de los sistemas de clasificación – b. Cyanobacteria – c. Amoebozoa",
     "9) a. Organismos de interés sanitario – b. Alveolata – c. Fungi",
     "10) a. Teoría endosimbiótica serial – b. Excavata (Discoba + Metamonada) – c. Archaeplastida",
-    "11) a. Fundamentos de los sistemas de clasificación – b. Rhizaria – c. Amoebozoa",
+    "11) a. Fundamentos de los sistemas de clasificación – b. Rhizaria – c. Archaeplastida",
     "12) a. Organismos de interés sanitario – b. Cianobacterias – c. Stramenopila",
     "13) a. Diversidad y distribución global de los organismos – b. Archaeplastida – c. Fungi",
     "14) a. Historia evolutiva de la diversidad biológica – b. Basidiomycota – c. Rhizaria"
